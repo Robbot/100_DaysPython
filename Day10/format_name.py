@@ -1,7 +1,14 @@
+# def format_name(f_name, l_name):
+#     formatted_f_name = f_name.title()
+#     formatted_l_name = l_name.title()
+#
+#     return f"{formatted_f_name} {formatted_l_name}"
+#
+# print(format_name("rob", "ROY"))
+
 def format_name(f_name, l_name):
     formatted_f_name = f_name.title()
     formatted_l_name = l_name.title()
+    return f"Hi {formatted_f_name} {formatted_l_name}"
 
-    return f"{formatted_f_name} {formatted_l_name}"
-
-print(format_name("rob", "ROY"))
+print(format_name(input("What is your name? "), input("What is your surname? ")))
