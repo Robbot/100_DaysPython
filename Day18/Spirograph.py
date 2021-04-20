@@ -9,6 +9,8 @@ directions = [0, 90, 180, 270]
 tim.speed("fastest")
 
 
+
+
 def draw_spirograph(size_of_gap):
     for _ in range(int(360 / size_of_gap)):
         tim.setheading(tim.heading() + size_of_gap)
