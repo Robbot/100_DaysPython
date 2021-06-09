@@ -13,4 +13,11 @@ import pandas
 #     print(temperatures)
 #
 data = pandas.read_csv("weather_data.csv")
-print(data["temp"])
+# temp_list = (data["temp"]).to_list()
+# average_temp = sum(temp_list)/len(temp_list)
+# print(average_temp)
+# print((data["temp"]).mean())
+# print((data["temp"]).max())
+# print(data.temp.max())
+
+print(data[data.temp == data.temp.max()])
