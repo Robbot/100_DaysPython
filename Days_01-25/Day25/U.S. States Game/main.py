@@ -1,4 +1,5 @@
 import turtle
+import pandas
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
@@ -7,12 +8,11 @@ screen.addshape(image)
 
 turtle.shape(image)
 
+answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
 
-def get_mouse_click_coor(x, y):
-    print(x, y)
-
-
-turtle.onscreenclick(get_mouse_click_coor)
-turtle.mainloop()
-
-#screen.exitonclick()
+data = pandas.read_csv("50_states.csv")
+states = data(data.state)
+cor_x = data.x
+cor_y = data.y
+print(type(states))
+print(states[0],cor_x[0],cor_y[0])
