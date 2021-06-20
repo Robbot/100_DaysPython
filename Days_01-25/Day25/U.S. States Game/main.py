@@ -9,10 +9,24 @@ screen.addshape(image)
 turtle.shape(image)
 
 answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
+answer_state = answer_state.capitalize()
 
 data = pandas.read_csv("50_states.csv")
-states = data(data.state)
+print(data)
+states = data.state.to_list()
 cor_x = data.x
 cor_y = data.y
-print(type(states))
-print(states[0],cor_x[0],cor_y[0])
+
+while True:
+    n = 0
+    for state in states:
+        n += 1
+        if answer_state == state:
+            print(states[n - 1], cor_x[n - 1], cor_y[n - 1])
+            states.remove(states[n - 1])
+            print('Updated states list: ', states)
+            print(len(states))
+    answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
+    answer_state = answer_state.title()
+    if len(states) == 0:
+        exit()
