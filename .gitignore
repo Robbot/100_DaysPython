@@ -140,4 +140,5 @@ cython_debug/
 
 #My private
 *.csv
+.idea
 
