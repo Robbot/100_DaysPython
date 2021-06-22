@@ -8,25 +8,41 @@ screen.addshape(image)
 
 turtle.shape(image)
 
-answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
-answer_state = answer_state.capitalize()
-
 data = pandas.read_csv("50_states.csv")
-print(data)
-states = data.state.to_list()
-cor_x = data.x
-cor_y = data.y
+all_states = data.state.to_list()
+guessed_states = []
 
-while True:
-    n = 0
-    for state in states:
-        n += 1
-        if answer_state == state:
-            print(states[n - 1], cor_x[n - 1], cor_y[n - 1])
-            states.remove(states[n - 1])
-            print('Updated states list: ', states)
-            print(len(states))
-    answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
-    answer_state = answer_state.title()
-    if len(states) == 0:
-        exit()
+# cor_x = data.x
+# cor_y = data.y
+# while True:
+#     n = 0
+#     for state in all_states:
+#         n += 1
+#         if answer_state == state:
+#             print(all_states[n - 1], cor_x[n - 1], cor_y[n - 1])
+#             all_states.remove(all_states[n - 1])
+#             print('Updated all_states list: ', all_states)
+#             print(len(all_states))
+#     answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
+#     answer_state = answer_state.title()
+#     if len(all_states) == 0:
+#         exit()
+while len(guessed_states) < 50:
+    answer_state = screen.textinput(title=f"{len(guessed_states)}/50 States Correct", prompt="What's another state's name?").capitalize()
+
+    if answer_state == "Exit":
+        missing_states = []
+        for state in all_states:
+            if state not in guessed_states:
+                missing_states.append(state)
+        new_data = pandas.DataFrame(missing_states)
+        new_data.to_csv("states_to_learn.csv")
+        break
+    if answer_state in all_states:
+        guessed_states.append(answer_state)
+        t = turtle.Turtle()
+        t.hideturtle()
+        t.penup()
+        state_data = data[data.state == answer_state]
+        t.goto(int(state_data.x), int(state_data.y))
+        t.write(state_data.state.item())
