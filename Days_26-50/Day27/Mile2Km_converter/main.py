@@ -4,7 +4,7 @@ window = tkinter.Tk()
 #if you would use "from tkinter import *" then you can write in the line above window = Tk()
 window.title("My very first GUI")
 window.minsize(width=500, height=300)
-#window.config(pad=100,pady=200) #adding padding gives more space from the window border
+#window.config(padx=100,pady=200) #adding padding gives more space from the window border
 
 #Label
 my_label = tkinter.Label(text="I am a Label", font=("Ariel", 24, "bold"))
