@@ -31,7 +31,7 @@ class Car:
 
     def __init__(self, **kwargs):
         self.make = kwargs.get("make")
-        #notice if you would use self.make = kw["make"] you get error during class initialising
+        #notice if you would use self.make = kwargs["make"] you get error during class initialising
         self.model = kwargs.get("model")
 
 my_car = Car()
@@ -44,3 +44,11 @@ print(my_car1.model)
 print(my_car1.make)
 print(my_car2.model)
 print(my_car2.make)
+
+
+def all_aboard(a, *args, **kw):
+    print(a, args, kw)
+
+
+all_aboard(4, 7, 3, 0, x=10, y=64)
+# and the output is:    4 (7, 3, 0) {'x': 10, 'y': 64} #one variable, args generate tuple and kwargs dictionary
