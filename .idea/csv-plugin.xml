@@ -31,21 +31,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Days_26-50\Day26\NATO_Alphabet\nato_phonetic_alphabet.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Days_26-50\Day26\US Game with ListComprehension\50_states.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Days_26-50\Day26\US Game with ListComprehension\states_to_learn.csv">
+        <entry key="\Days_26-50\Day30\NATO_Phonetic_Alphabet\nato_phonetic_alphabet.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
