@@ -1,1 +1,1 @@
-kupa i zupa
+kupa i zupa i blocked Verwolff
