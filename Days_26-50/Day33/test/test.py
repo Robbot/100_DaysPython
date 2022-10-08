@@ -1,1 +1,0 @@
-kupa i zupa i blocked Verwolff a teraz Robbot
