@@ -1,1 +1,1 @@
-kupa i zupa i blocked Verwolff
+kupa i zupa i blocked Verwolff a teraz Robbot
