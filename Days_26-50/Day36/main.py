@@ -14,13 +14,15 @@ NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 parameters = {
     "function": "TIME_SERIES_DAILY",
     "symbol": "TSLA",
-    "apikey": "xxxxxxxxxxxxxxxxxxxxxx"
+    "apikey": "3IU0KH48OX3CIPQE"
 }
 
 response = requests.get(url=STOCK_ENDPOINT, params=parameters)
 response.raise_for_status()
 stock_data = response.json()
-print(stock_data)
+
+yesterdays_stock_data = stock_data["Time Series (Daily)"]
+print(yesterdays_stock_data)
 
 #TODO 2. - Get the day before yesterday's closing stock price
 

@@ -17,13 +17,13 @@
 #   print(row.student) # or print(row.score)
 
 #{new_key:new_value for (index, row) in df.iterrows()}
-#TODO 1. Create a dictionary in this format:
+#Create a dictionary in this format:
 #{"A": "Alfa", "B": "Bravo"}
 import pandas
 df = pandas.read_csv("nato_phonetic_alphabet.csv")
 #{new_key:new_value for (key,value) in dictionary.items() if test}
 dict = {row.letter:row.code for (index,row) in df.iterrows()}
-#TODO 2. Create a list of the phonetic code words from a word that the user inputs.
+#Create a list of the phonetic code words from a word that the user inputs.
 word = input("Provide a word to spell it: ").upper()
 #word_split = [char.capitalize() for char in word]
 spell = [dict[letter] for letter in word]
