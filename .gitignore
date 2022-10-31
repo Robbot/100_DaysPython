@@ -142,5 +142,4 @@ cython_debug/
 *.csv
 *.xml
 .idea/
-
 config.ini
