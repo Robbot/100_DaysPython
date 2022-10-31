@@ -143,4 +143,4 @@ cython_debug/
 *.xml
 .idea/
 
-!/Days_26-50/Day38/config.ini
+config.ini
