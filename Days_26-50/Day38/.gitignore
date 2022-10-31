@@ -138,9 +138,3 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-#My private
-*.csv
-*.xml
-.idea/
-
-!/Days_26-50/Day38/config.ini

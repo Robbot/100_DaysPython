@@ -2,6 +2,13 @@ import requests
 from datetime import datetime
 import os
 
+db_user = os.environ.get("DB_USER")
+db_password = os.environ.get("DB_PASS")
+
+print(db_user)
+print(db_password)
+
+
 GENDER = YOUR GENDER
 WEIGHT_KG = YOUR WEIGHT
 HEIGHT_CM = YOUR HEIGHT
