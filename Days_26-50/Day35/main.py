@@ -1,11 +1,17 @@
 import requests
+import configparser
 from twilio.rest import Client
 
-MY_LAT = 56.673969
-MY_LONG = 12.857290
-api_key = "xxxxxxxxxxxxxxxxxx" #api key from openweather.com
-account_sid = os.environ['TWILIO_ACCOUNT_SID'] #twilio account data
-auth_token = os.environ['TWILIO_AUTH_TOKEN'] #twillio account token
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+MY_LAT = str(config['constants']['my_lat'])
+MY_LONG = str(config['constants']['my_long'])
+api_key = str(config['openweather']['api_key'])
+account_sid = str(config['twilio']['account_sid'])
+auth_token = str(config['twilio']['auth_token'])
+send_from = str(config['twilio']['my_twilio_number'])
+send_to = str(config['twilio']['my_own_number'])
 
 parameters = {
     "lat": MY_LAT,
@@ -15,7 +21,7 @@ parameters = {
 response = requests.get(url="https://api.openweathermap.org/data/2.5/forecast", params=parameters)
 response.raise_for_status()
 weather_data = response.json()
-# print(weather_data["list"][0]["weather"][0])
+print(weather_data["list"][0]["weather"][0])
 
 will_rain = False
 
@@ -31,8 +37,8 @@ if will_rain:
     
     message = client.messages \
         .create(
-        body="Join Earth's mightiest heroes. Like Kevin Bacon.",
-        from_='+15017122661',
-        to='+15558675310'
+        body="It's going to rain today. Remember to bring an ☔",
+        from_=send_from,
+        to=send_to
     )
     print(message.status)
