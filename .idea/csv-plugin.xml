@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Days_01-25\Day25\U.S. States Game\states_to_learn.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Days_01-25\Day25\Weather\weather_data.csv">
           <value>
             <Attribute>
